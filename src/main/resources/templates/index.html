@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>CBM Personen</title>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+<div id="interactive" class="viewport"></div>
+<form method="get" action="person">
+    <label>Personalnummer: <input name="person_number" id="person_number" placeholder="Personnummer"/></label>
+    <button type="submit">Suchen</button>
+</form>
+
+<div th:if="${person}" class="result">
+    <p th:text="${person.firstName}"></p>
+    <p th:text="${person.lastName}"></p>
+</div>
+
+<div th:if="${person == null}">
+    <p>Es wurde keine Person mit dieser Nummer gefunden.</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/quagga@0.12.1/dist/quagga.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="js/scanner.js"></script>
+</body>
+</html>
