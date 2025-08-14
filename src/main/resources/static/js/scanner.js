@@ -1,3 +1,4 @@
+$(document).ready(() => {
 const config = {
     inputStream: {
         name: "Live",
@@ -25,4 +26,5 @@ Quagga.init(config, err => {
 
 Quagga.onDetected(data => {
     $('#code').val(data.codeResult.code);
+})
 })
